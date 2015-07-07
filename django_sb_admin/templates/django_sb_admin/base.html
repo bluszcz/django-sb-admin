@@ -149,7 +149,7 @@
                     </ul>
                 </li>
             </ul>
-            {% block sdb_admin_sidebar %}<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            {% block sb_admin_sidebar %}<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
@@ -188,7 +188,7 @@
                         <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                     </li>
                 </ul>
-            </div>{% endblock sdb_admin_sidebar %}
+            </div>{% endblock sb_admin_sidebar %}
             <!-- /.navbar-collapse -->
         </nav>
 
@@ -214,6 +214,16 @@
                     </div>
                 </div>
                 <!-- /.row -->
+                {% block sb_admin_content %}
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="alert alert-info alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                            <i class="fa fa-info-circle"></i>  <strong>Django SB Admin</strong> This warning is inside the <code>sb_admin_content</code> block.
+                        </div>
+                    </div>
+                </div>
+                {% endblock sb_admin_content %}
 
             </div>
             <!-- /.container-fluid -->
