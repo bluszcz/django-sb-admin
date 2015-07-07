@@ -29,7 +29,8 @@ Installation
 
 3. Extend a base template:
 
-   {% extends "django_sb_admin/base.html" %}
+    {% extends "django_sb_admin/base.html" %}
+    
 
 License
 -------
