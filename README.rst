@@ -24,12 +24,20 @@ Installation
 
     INSTALLED_APPS = (
         ...
-        'django_smb_app',
+        'django_sb_app',
     )
 
-3. Extend a base template::
+Usage
+-----
+
+1. Extend a base template::
 
     {% extends "django_sb_admin/base.html" %}
+
+2. Override following blocks::
+
+    {% block sb_admin_sidebar %}{% endblock sb_admin_sidebar %}
+    {% block sb_admin_content %}{% endblock sb_admin_content %}
     
 
 License
