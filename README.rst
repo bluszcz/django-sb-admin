@@ -2,6 +2,8 @@
 django-sb-admin
 ===============
 
+.. image:: https://picup.it/media/pictures/Selection_709.png
+
 Introduction
 ------------
 
