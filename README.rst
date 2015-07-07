@@ -16,7 +16,7 @@ create a pwerful framework for creating admin panels, web apps, or back-end dash
 Installation
 ------------
 
-1. Install an app
+1. Install an app::
 
     pip install https://github.com/bluszcz/django-sb-admin.git
 
@@ -27,7 +27,7 @@ Installation
         'django_smb_app',
     )
 
-3. Extend a base template:
+3. Extend a base template::
 
     {% extends "django_sb_admin/base.html" %}
     
