@@ -1,15 +1,14 @@
 {% load static %}<!DOCTYPE html>
 <html lang="en">
-
 <head>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
+    <meta name="description" content="{% block description %}{% endblock description %}">
     <meta name="author" content="">
 
-    <title>{% block title %}SB Admin - Bootstrap Admin Template{% endblock %}</title>
+    <title>{% block title %}Django SB Admin -Bootstrap Admin Template{% endblock %}</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="{% static "css/bootstrap.min.css"%}" rel="stylesheet">
@@ -27,6 +26,8 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    {% block sb_admin_custom_css %}{% endblock sb_admin_custom_css %}
+
 </head>
 
 <body>
@@ -43,7 +44,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">{% block sd_admin_title %}SB Admin{% endblock %}</a>
+                <a class="navbar-brand" href="index.html">{% block sd_admin_title %}Django SB Admin{% endblock %}</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -152,14 +153,17 @@
             {% block sb_admin_sidebar %}<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
-                    <li>
-                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    <li {% if nav_active == "start" %}class="active"{% endif %}>
+                        <a href="{% url "sb_admin_start" %}"><i class="fa fa-fw fa-file"></i> Start</a>
                     </li>
-                    <li>
-                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                    <li {% if nav_active == "dashboard" %}class="active"{% endif %}>
+                        <a href="{% url "sb_admin_dashboard" %}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
-                    <li>
-                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
+                    <li {% if nav_active == "charts" %}class="active"{% endif %}>
+                        <a href="{% url "sb_admin_charts" %}"><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                    </li>
+                    <li {% if nav_active == "tables" %}class="active"{% endif %}>
+                        <a href="{% url "sb_admin_tables" %}"><i class="fa fa-fw fa-table"></i> Tables</a>
                     </li>
                     <li>
                         <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
@@ -185,9 +189,7 @@
                     <li>
                         <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                     </li>
-                    <li class="active">
-                        <a href="blank-page.html"><i class="fa fa-fw fa-file"></i> Documentation</a>
-                    </li>
+
                 </ul>
             </div>{% endblock sb_admin_sidebar %}
             <!-- /.navbar-collapse -->
@@ -201,46 +203,58 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h1 class="page-header">
-                            {% block sb_admin_title %}Documentation{% endblock sb_admin_title %}
-                            {% block sb_admin_subheading %}<small>Subheading</small>{% endblock sb_admin_subheading %}
+                            {% block sb_admin_title %}Start{% endblock sb_admin_title %}
+                            {% block sb_admin_subheading %}<small>Short introduction</small>{% endblock sb_admin_subheading %}
                         </h1>
                         <ol class="breadcrumb">
                             <li>
-                                <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
+                                {% block sb_admin_breadcrumb %}<i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>{% endblock sb_admin_breadcrumb %}
                             </li>
+                            {% block sb_admin_breadcrumb_active %}
                             <li class="active">
-                                <i class="fa fa-file"></i> Documentation
+                                 <i class="fa fa-file"></i> Start
                             </li>
+                            {% endblock sb_admin_breadcrumb_active %}
                         </ol>
                     </div>
                 </div>
                 <!-- /.row -->
-                   <div class="container">
 
-      <form class="form-signin">
-        <h2 class="form-signin-heading">Please sign in</h2>
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="remember-me"> Remember me
-          </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      </form>
-
-    </div> 
                 {% block sb_admin_content %}
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="alert alert-info alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <i class="fa fa-info-circle"></i>  <strong>Django SB Admin</strong> This warning is inside the <code>sb_admin_content</code> block.
+                            <i class="fa fa-info-circle"></i>  <strong>Django SB Admin</strong> This and everything below is inside <code>sb_admin_content</code> block.
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="page-header">Django SB Admin</h2>
+                        <p class="lead">Django application providing SB Admin dashboard theme, but also some other bootstrap related extras (for now it is only a login snippet).</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-12">
+                    <form class="form-signin">
+                      <h2 class="form-signin-heading">Please sign in</h2>
+                      <label for="inputEmail" class="sr-only">Email address</label>
+                      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                      <label for="inputPassword" class="sr-only">Password</label>
+                      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                      <div class="checkbox">
+                        <label>
+                          <input type="checkbox" value="remember-me"> Remember me
+                        </label>
+                      </div>
+                      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                    </form>
+                    </div>      
+                </div>                 
+                
+
                 {% endblock sb_admin_content %}
 
             </div>
@@ -257,6 +271,8 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="{% static "js/bootstrap.min.js"%}"></script>
+
+    {% block sb_admin_custom_js %}{% endblock sb_admin_custom_js %}
 
 </body>
 
