@@ -165,8 +165,8 @@
                     <li {% if nav_active == "tables" %}class="active"{% endif %}>
                         <a href="{% url "sb_admin_tables" %}"><i class="fa fa-fw fa-table"></i> Tables</a>
                     </li>
-                    <li>
-                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Forms</a>
+                    <li {% if nav_active == "forms" %}class="active"{% endif %}>
+                        <a href="{% url "sb_admin_forms" %}"><i class="fa fa-fw fa-edit"></i> Forms</a>
                     </li>
                     <li>
                         <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
