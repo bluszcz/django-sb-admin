@@ -2,7 +2,7 @@
 django-sb-admin
 ===============
 
-.. image:: https://picup.it/media/pictures/Selection_715.png
+.. image:: https://picup.it/media/smarts/b3d2cfe66830794ce35bdee04bbe74f6.jpg
 
 Introduction
 ------------
@@ -20,7 +20,7 @@ Installation
 
 1. Install an app::
 
-    pip install https://github.com/bluszcz/django-sb-admin.git
+    pip install django-sb-admin
 
 2. Add "django_smb_app" to your INSTALLED_APPS setting like this::
 
