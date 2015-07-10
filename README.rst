@@ -2,7 +2,7 @@
 django-sb-admin
 ===============
 
-.. image:: https://picup.it/media/pictures/Selection_709.png
+.. image:: https://picup.it/media/pictures/Selection_715.png
 
 Introduction
 ------------
@@ -13,7 +13,7 @@ http://startbootstrap.com/template-overviews/sb-admin/
 
 SB Admin is a free to download Bootstrap admin template. This template uses the
 default Bootstrap 3 styles along with a variety of powerful jQuery plugins to 
-create a pwerful framework for creating admin panels, web apps, or back-end dashboards.
+create a powerful framework for creating admin panels, web apps, or back-end dashboards.
 
 Installation
 ------------
@@ -28,6 +28,10 @@ Installation
         ...
         'django_sb_app',
     )
+
+3. If you want to see an example app, add following to your urls file::
+
+    url(r'^django-sb-admin/', include('django_sb_admin.urls')),
 
 Usage
 -----
