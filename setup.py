@@ -13,20 +13,19 @@ setup(
     version='0.1.1',
     packages=['django_sb_admin'],
     include_package_data=True,
-    license='Apache License version 2.0',  # example license
+    license='Apache License version 2.0',
     description='SB Admin dashboard Bootstrap 3 theme packaged as Django app.',
     long_description=README,
-    url='https://github.com/bluszcz/django-smb-admin',
+    url='https://github.com/bluszcz/django-sb-admin',
     author='Rafał Zawadzki',
     author_email='bluszcz@bluszcz.net',
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: Apache Software License', # example license
+        'License :: OSI Approved :: Apache Software License', 
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        # Replace these appropriately if you are stuck on Python 2.
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.2',
         'Programming Language :: Python :: 3.3',
