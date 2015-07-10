@@ -44,7 +44,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">{% block sd_admin_title %}Django SB Admin{% endblock %}</a>
+                <a class="navbar-brand" href="{% url "sb_admin_start" %}">{% block sd_admin_title %}Django SB Admin{% endblock %}</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -168,11 +168,11 @@
                     <li {% if nav_active == "forms" %}class="active"{% endif %}>
                         <a href="{% url "sb_admin_forms" %}"><i class="fa fa-fw fa-edit"></i> Forms</a>
                     </li>
-                    <li>
-                        <a href="bootstrap-elements.html"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
+                    <li {% if nav_active == "bootstrap_elements" %}class="active"{% endif %}>
+                        <a href="{% url "sb_admin_bootstrap_elements" %}"><i class="fa fa-fw fa-desktop"></i> Bootstrap Elements</a>
                     </li>
-                    <li>
-                        <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
+                    <li {% if nav_active == "bootstrap_grid" %}class="active"{% endif %}>
+                        <a href="{% url "sb_admin_bootstrap_grid" %}""><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
                     </li>
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-arrows-v"></i> Dropdown <i class="fa fa-fw fa-caret-down"></i></a>
@@ -186,8 +186,8 @@
                         </ul>
                     </li>
 
-                    <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
+                    <li {% if nav_active == "rtl_dashboard" %}class="active"{% endif %}>
+                        <a href="{% url "sb_admin_rtl_dashboard" %}"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                     </li>
 
                 </ul>

@@ -40,7 +40,14 @@ Usage
 
     {% block sb_admin_sidebar %}{% endblock sb_admin_sidebar %}
     {% block sb_admin_content %}{% endblock sb_admin_content %}
-    
+
+Conventions
+-----------
+
+Template blocks
+===============
+
+* Names  of blocks start with *sb_admin* 
 
 License
 -------

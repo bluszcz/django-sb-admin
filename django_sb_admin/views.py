@@ -30,12 +30,12 @@ def forms(request):
 def bootstrap_elements(request):
     """Bootstrap elements page.
     """
-    return render(request, "django_sb_admin/bootstrap_elements.html",
+    return render(request, "django_sb_admin/sb_admin_bootstrap_elements.html",
                   {"nav_active":"bootstrap_elements"})
 def bootstrap_grid(request):
     """Bootstrap grid page.
     """
-    return render(request, "django_sb_admin/bootstrap_grid.html",
+    return render(request, "django_sb_admin/sb_admin_bootstrap_grid.html",
                   {"nav_active":"bootstrap_grid"})
 def dropdown(request):
     """Dropdown  page.
