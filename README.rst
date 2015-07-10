@@ -22,7 +22,7 @@ Installation
 
     pip install django-sb-admin
 
-2. Add "django_smb_app" to your INSTALLED_APPS setting like this::
+2. Add "django_sb_app" to your INSTALLED_APPS setting like this::
 
     INSTALLED_APPS = (
         ...
