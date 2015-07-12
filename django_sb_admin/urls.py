@@ -10,10 +10,5 @@ urlpatterns = patterns('',
     url(r'^bootstrap-elements/$', 'django_sb_admin.views.bootstrap_elements', name='sb_admin_bootstrap_elements'),
     url(r'^bootstrap-grid/$', 'django_sb_admin.views.bootstrap_grid', name='sb_admin_bootstrap_grid'),
     url(r'^rtl-dashboard/$', 'django_sb_admin.views.rtl_dashboard', name='sb_admin_rtl_dashboard'),
-    
-    
-    
-    
-    
-
+    url(r'^blank/$', 'django_sb_admin.views.blank', name='sb_admin_blank'),
 )

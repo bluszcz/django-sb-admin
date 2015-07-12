@@ -47,3 +47,9 @@ def rtl_dashboard(request):
     """
     return render(request, "django_sb_admin/sb_admin_rtl_dashboard.html",
                   {"nav_active":"rtl_dashboard"})
+
+def blank(request):
+    """Blank page.
+    """
+    return render(request, "django_sb_admin/sb_admin_blank.html",
+                  {"nav_active":"blank"})

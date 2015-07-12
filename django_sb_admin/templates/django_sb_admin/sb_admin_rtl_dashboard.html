@@ -1,4 +1,4 @@
-{% extends "django_sb_admin/base.html" %}{% load static %}{% block sb_admin_title %}Statistics Overview{% endblock sb_admin_title %}{% block sb_admin_subheading %}{% endblock sb_admin_subheading %}
+{% extends "django_sb_admin/base.html" %}{% load static %}{% block sb_admin_title %}RTL Dashboard{% endblock sb_admin_title %}{% block sb_admin_subheading %}{% endblock sb_admin_subheading %}
 {% block sb_admin_breadcrumb %}<i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>{% endblock sb_admin_breadcrumb %}
  {% block sb_admin_breadcrumb_active %}
  <li class="active">
@@ -247,3 +247,17 @@
                     </div>
                 </div>
 {% endblock sb_admin_content %}
+{% block sb_admin_custom_js %}
+    <!-- Morris Charts JavaScript -->
+    <script src="{% static "js/plugins/morris/raphael.min.js" %}"></script>
+    <script src="{% static "js/plugins/morris/morris.min.js" %}"></script>
+    <script src="{% static "js/plugins/morris/morris-data.js" %}"></script>
+
+    <!-- Flot Charts JavaScript -->
+    <!--[if lte IE 8]><script src="js/excanvas.min.js"></script><![endif]-->
+    <script src="{% static "js/plugins/flot/jquery.flot.js" %}"></script>
+    <script src="{% static "js/plugins/flot/jquery.flot.tooltip.min.js" %}"></script>
+    <script src="{% static "js/plugins/flot/jquery.flot.resize.js" %}"></script>
+    <script src="{% static "js/plugins/flot/jquery.flot.pie.js" %}"></script>
+    <script src="{% static "js/plugins/flot/flot-data.js" %}"></script>
+{% endblock sb_admin_custom_js %}

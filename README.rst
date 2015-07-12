@@ -7,7 +7,7 @@ django-sb-admin
 Introduction
 ------------
 
-Django SB Admin is a Django app which provides a Bootstrap 3 Dashboard theme:
+Django SB Admin is a resuable Django app which provides a Bootstrap 3 SB Admin dashboard theme:
 
 http://startbootstrap.com/template-overviews/sb-admin/
 
@@ -36,14 +36,24 @@ Installation
 Usage
 -----
 
-1. Extend a base template::
+1. Copy following blank template::
+
+    django_sb_admin/sb_admin_blank.htnk
+
+or:
+
+2. Extend a base template::
 
     {% extends "django_sb_admin/base.html" %}
 
-2. Override following blocks::
+and then:
 
-    {% block sb_admin_sidebar %}{% endblock sb_admin_sidebar %}
-    {% block sb_admin_content %}{% endblock sb_admin_content %}
+3. Override following blocks::
+    {% block sb_admin_header %}<!-- Header of the page -->{% endblock sb_admin_header %}
+    {% block sb_admin_title %}<!-- Title of the content the page -->{% endblock sb_admin_title %}
+    {% block sb_admin_sidebar %}<!-- left sidebar -->{% endblock sb_admin_sidebar %}
+    {% block sb_admin_navbar_right %}<!-- right top navbar -->{% endblock sb_admin_navbar_right %}
+    {% block sb_admin_content %}<!-- content -->{% endblock sb_admin_content %}
 
 Conventions
 -----------
@@ -52,6 +62,7 @@ Template blocks
 ===============
 
 * Names  of blocks start with *sb_admin* 
+
 
 License
 -------

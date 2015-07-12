@@ -1,23 +1,21 @@
 {% load static %}<!DOCTYPE html>
 <html lang="en">
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{% block description %}{% endblock description %}">
-    <meta name="author" content="">
-
+    <meta name="description" content="{% block sb_admin_description %}{% endblock sb_admin_description %}">
+    <meta name="author" content="{% block sb_admin_author %}{% endblock %}">
     <title>{% block title %}Django SB Admin -Bootstrap Admin Template{% endblock %}</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{% static "css/bootstrap.min.css"%}" rel="stylesheet">
+    {% block sb_admin_bootstrap_css %}<link href="{% static "css/bootstrap.min.css"%}" rel="stylesheet">{% endblock sb_admin_bootstrap_css %}
 
     <!-- Custom CSS -->
-    <link href="{% static "css/sb-admin.css"%}" rel="stylesheet">
+    {% block sb_admin_css %}<link href="{% static "css/sb-admin.css"%}" rel="stylesheet">{% endblock sb_admin_css %}
 
     <!-- Custom Fonts -->
-    <link href="{% static "font-awesome/css/font-awesome.min.css"%}" rel="stylesheet" type="text/css">
+    {% block sb_admin_fonts_css %}<link href="{% static "font-awesome/css/font-awesome.min.css"%}" rel="stylesheet" type="text/css">{% endblock sb_admin_fonts_css %}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -33,7 +31,6 @@
 <body>
 
     <div id="wrapper">
-
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -44,10 +41,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{% url "sb_admin_start" %}">{% block sd_admin_title %}Django SB Admin{% endblock %}</a>
+                <a class="navbar-brand" href="{% url "sb_admin_start" %}">{% block sb_admin_header %}Django SB Admin{% endblock sb_admin_header %}</a>
             </div>
             <!-- Top Menu Items -->
-            <ul class="nav navbar-right top-nav">
+            {% block sb_admin_navbar_right %}<ul class="nav navbar-right top-nav">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i> <b class="caret"></b></a>
                     <ul class="dropdown-menu message-dropdown">
@@ -59,7 +56,7 @@
                                     </span>
                                     <div class="media-body">
                                         <h5 class="media-heading">
-                                            <strong>{{ user.username }}</strong>
+                                            <strong>{% if user.username %}{{ user.username }}{% else %}Anonymous{% endif %}</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -75,7 +72,7 @@
                                     </span>
                                     <div class="media-body">
                                         <h5 class="media-heading">
-                                            <strong>{{ user.username }}</strong>
+                                            <strong>{% if user.username %}{{ user.username }}{% else %}Anonymous{% endif %}</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -91,7 +88,7 @@
                                     </span>
                                     <div class="media-body">
                                         <h5 class="media-heading">
-                                            <strong>{{ user.username }}</strong>
+                                            <strong>{% if user.username %}{{ user.username }}{% else %}Anonymous{% endif %}</strong>
                                         </h5>
                                         <p class="small text-muted"><i class="fa fa-clock-o"></i> Yesterday at 4:32 PM</p>
                                         <p>Lorem ipsum dolor sit amet, consectetur...</p>
@@ -132,7 +129,7 @@
                     </ul>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {{ user.username }} <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> {% if user.username %}{{ user.username }}{% else %}Anonymous{% endif %} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
                             <a href="#"><i class="fa fa-fw fa-user"></i> Profile</a>
@@ -149,12 +146,12 @@
                         </li>
                     </ul>
                 </li>
-            </ul>
+            </ul>{% endblock sb_admin_navbar_right %}
             {% block sb_admin_sidebar %}<!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li {% if nav_active == "start" %}class="active"{% endif %}>
-                        <a href="{% url "sb_admin_start" %}"><i class="fa fa-fw fa-file"></i> Start</a>
+                        <a href="{% url "sb_admin_start" %}"><i class="fa fa-fw fa-play"></i> Start</a>
                     </li>
                     <li {% if nav_active == "dashboard" %}class="active"{% endif %}>
                         <a href="{% url "sb_admin_dashboard" %}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
@@ -189,6 +186,9 @@
                     <li {% if nav_active == "rtl_dashboard" %}class="active"{% endif %}>
                         <a href="{% url "sb_admin_rtl_dashboard" %}"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                     </li>
+                    <li {% if nav_active == "blank" %}class="active"{% endif %}>
+                        <a href="{% url "sb_admin_blank" %}"><i class="fa fa-fw fa-file"></i> Blank</a>
+                    </li>
 
                 </ul>
             </div>{% endblock sb_admin_sidebar %}
@@ -212,7 +212,7 @@
                             </li>
                             {% block sb_admin_breadcrumb_active %}
                             <li class="active">
-                                 <i class="fa fa-file"></i> Start
+                                 <i class="fa fa-play"></i> Start
                             </li>
                             {% endblock sb_admin_breadcrumb_active %}
                         </ol>
@@ -221,7 +221,7 @@
                 <!-- /.row -->
 
                 {% block sb_admin_content %}
-                <div class="row">
+                                <div class="row">
                     <div class="col-lg-12">
                         <div class="alert alert-info alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
@@ -232,29 +232,13 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <h2 class="page-header">Django SB Admin</h2>
-                        <p class="lead">Django application providing SB Admin dashboard theme, but also some other bootstrap related extras (for now it is only a login snippet).</p>
+                        <p class="lead">Reusable Django application providing SB Admin dashboard theme, but also some other bootstrap related extras (for now it is only a login snippet).</p>
+                        <h5>List of resources</h5>
+                        <h6>Font Awesome</h6>
+                        <p class="">You can find list of all awesome icons <a href="https://fortawesome.github.io/Font-Awesome/icons/">here</a>.
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-lg-12">
-                    <form class="form-signin">
-                      <h2 class="form-signin-heading">Please sign in</h2>
-                      <label for="inputEmail" class="sr-only">Email address</label>
-                      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-                      <label for="inputPassword" class="sr-only">Password</label>
-                      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox" value="remember-me"> Remember me
-                        </label>
-                      </div>
-                      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                    </form>
-                    </div>      
-                </div>                 
-                
-
+                {% include "django_sb_admin/login.html" %}               
                 {% endblock sb_admin_content %}
 
             </div>

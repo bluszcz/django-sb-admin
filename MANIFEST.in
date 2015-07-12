@@ -1,4 +1,5 @@
 include LICENSE
 include README.rst
+include CHANGES.txt
 recursive-include django_sb_admin/static *
 recursive-include django_sb_admin/templates *
