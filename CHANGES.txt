@@ -1,5 +1,11 @@
 Django SB Admin ChangeLog
 
+0.4
+
+ - Improved login page to make it work with django
+ - Fixed typo in Subheading blank page
+ 
+
 0.3
 
  - More blocks implemented

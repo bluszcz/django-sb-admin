@@ -56,6 +56,12 @@ and then:
     {% block sb_admin_navbar_right %}<!-- right top navbar -->{% endblock sb_admin_navbar_right %}
     {% block sb_admin_content %}<!-- content -->{% endblock sb_admin_content %}
 
+To use included login page put following in your **urls.py**::
+
+    url(r'^accounts/login/$', auth_views.login, 
+        {'template_name': 'django_sb_admin/examples/login.html'}),
+
+
 Conventions
 -----------
 
@@ -63,7 +69,6 @@ Template blocks
 ===============
 
 * Names  of blocks start with *sb_admin* 
-
 
 License
 -------

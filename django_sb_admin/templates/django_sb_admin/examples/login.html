@@ -1,0 +1,15 @@
+{% extends "django_sb_admin/base.html" %}
+{% block title %}Login{% endblock title %}
+{% block sb_admin_navbar_right %}{% endblock sb_admin_navbar_right %}
+{% block sb_admin_sidebar %}{% endblock sb_admin_sidebar %}
+{% block sb_admin_title %}Login{% endblock sb_admin_title %}
+{% block sb_admin_subheading %}<small>Introduce your credentials</small>{% endblock sb_admin_subheading %}
+{% block sb_admin_breadcrumb %}{% endblock sb_admin_breadcrumb %}
+{% block sb_admin_breadcrumb_active %}{% endblock sb_admin_breadcrumb_active %}
+{% block sb_admin_content %}
+{% load i18n admin_static %}
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/login.css" %}" />{% endblock %}
+{% block content %}
+{% include "django_sb_admin/login.html" %}
+{% endblock %}
+{% endblock %}
