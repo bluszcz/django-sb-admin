@@ -49,6 +49,7 @@ or:
 and then:
 
 3. Override following blocks::
+
     {% block sb_admin_header %}<!-- Header of the page -->{% endblock sb_admin_header %}
     {% block sb_admin_title %}<!-- Title of the content the page -->{% endblock sb_admin_title %}
     {% block sb_admin_sidebar %}<!-- left sidebar -->{% endblock sb_admin_sidebar %}
