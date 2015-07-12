@@ -36,6 +36,8 @@ Installation
 Usage
 -----
 
+.. image:: https://picup.it/media/smarts/c0b56b47dd7f199073fbca887b79a6f5.jpg
+
 1. Copy following blank template::
 
     django_sb_admin/sb_admin_blank.html
