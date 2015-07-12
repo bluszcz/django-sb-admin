@@ -26,7 +26,7 @@ Installation
 
     INSTALLED_APPS = (
         ...
-        'django_sb_app',
+        'django_sb_admin',
     )
 
 3. If you want to see an example app, add following to your urls file::
@@ -38,7 +38,7 @@ Usage
 
 1. Copy following blank template::
 
-    django_sb_admin/sb_admin_blank.htnk
+    django_sb_admin/sb_admin_blank.html
 
 or:
 
