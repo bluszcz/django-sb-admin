@@ -72,6 +72,12 @@ Template blocks
 
 * Names  of blocks start with *sb_admin* 
 
+Extras
+------
+
+* login template
+* messages support in a base template
+
 License
 -------
 
