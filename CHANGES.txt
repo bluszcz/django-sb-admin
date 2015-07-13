@@ -1,5 +1,10 @@
 Django SB Admin ChangeLog
 
+0.3.3
+
+ - Added messages support in the base template
+ - Fixed charts in the Dashboard demo
+
 0.3.2
 
  - Fixed few typos 

@@ -41,7 +41,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="{% url "sb_admin_start" %}">{% block sb_admin_header %}Django SB Admin{% endblock sb_admin_header %}</a>
+                <a class="navbar-brand" href="{% block sb_admin_header_url %}{% url "sb_admin_start" %}{% endblock sb_admin_header_url %}">{% block sb_admin_header %}Django SB Admin{% endblock sb_admin_header %}</a>
             </div>
             <!-- Top Menu Items -->
             {% block sb_admin_navbar_right %}<ul class="nav navbar-right top-nav">
@@ -219,7 +219,22 @@
                     </div>
                 </div>
                 <!-- /.row -->
-
+{% if messages %}
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+<ul class="messages">
+    {% for message in messages %}
+    <div class="alert alert-info alert-dismissable">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    <i class="fa fa-info-circle"></i>  {{ message }}
+    </div>
+    <!--<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>-->
+    {% endfor %}
+</ul>
+                    </div>
+                </div>
+{% endif %}
                 {% block sb_admin_content %}
                 <div class="row">
                     <div class="col-lg-12">
