@@ -1,5 +1,9 @@
 Django SB Admin ChangeLog
 
+0.3.4
+
+ - Fixed UnicodeDecodeError during installation
+
 0.3.3
 
  - Added messages support in the base template
