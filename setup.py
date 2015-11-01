@@ -10,14 +10,14 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-sb-admin',
-    version='0.3.4',
+    version='0.3.5',
     packages=['django_sb_admin'],
     include_package_data=True,
     license='Apache License version 2.0',
     description='SB Admin dashboard bootstrap 3 theme packaged as a reusable Django app.',
     long_description=README,
     url='https://github.com/bluszcz/django-sb-admin',
-    author='Rafał Zawadzki',
+    author='Rafal Zawadzki',
     author_email='bluszcz@bluszcz.net',
     classifiers=[
         'Environment :: Web Environment',
