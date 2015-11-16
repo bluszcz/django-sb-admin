@@ -1,5 +1,9 @@
 Django SB Admin ChangeLog
 
+0.3.6
+
+ - Fixed login view (@jmhobrien)
+
 0.3.5
 
  - Changed name to ascii ;)
