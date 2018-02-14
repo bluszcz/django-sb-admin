@@ -1,5 +1,9 @@
 Django SB Admin ChangeLog
 
+0.3.7
+
+ - Fixed urlpatterns Django 1.10
+
 0.3.6
 
  - Fixed login view (@jmhobrien)
