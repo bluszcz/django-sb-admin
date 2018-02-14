@@ -2,7 +2,7 @@
 django-sb-admin
 ===============
 
-.. image:: https://picup.it/media/smarts/b3d2cfe66830794ce35bdee04bbe74f6.jpg
+.. image:: https://devcarpet.net/images/github/b3d2cfe66830794ce35bdee04bbe74f6.jpg
 
 Introduction
 ------------
@@ -36,7 +36,7 @@ Installation
 Usage
 -----
 
-.. image:: https://picup.it/media/smarts/c0b56b47dd7f199073fbca887b79a6f5.jpg
+.. image:: https://devcarpet.net/images/github/c0b56b47dd7f199073fbca887b79a6f5.jpg
 
 1. Copy following blank template::
 
