@@ -16,6 +16,7 @@ setup(
     license='Apache License version 2.0',
     description='SB Admin dashboard bootstrap 4 theme packaged as a reusable Django app.',
     long_description=README,
+    long_description_content_type='text/markdown',
     url='https://github.com/bluszcz/django-sb-admin',
     author='Rafal Zawadzki',
     author_email='bluszcz@bluszcz.net',

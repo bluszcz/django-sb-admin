@@ -81,7 +81,7 @@ Extras
 License
 -------
 
-Copyright 2015 Rafal Zawadzki
+Copyright 2015-2019 Rafal Zawadzki
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
@@ -95,5 +95,5 @@ Copyright 2015 Rafal Zawadzki
     See the License for the specific language governing permissions and
     limitations under the License.
 
-SB Admin itself is licensed under the Apache License 
-https://github.com/IronSummitMedia/startbootstrap-sb-admin/blob/gh-pages/LICENSE
+SB Admin itself is licensed under the MIT License 
+https://github.com/BlackrockDigital/startbootstrap-sb-admin/blob/master/LICENSE
