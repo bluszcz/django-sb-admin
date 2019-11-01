@@ -9,7 +9,7 @@ Introduction
 
 Django SB Admin is a resuable Django app which provides a Bootstrap 3 SB Admin dashboard theme:
 
-http://startbootstrap.com/template-overviews/sb-admin/
+https://startbootstrap.com/templates/sb-admin/
 
 SB Admin is a free to download Bootstrap admin template. This template uses the
 default Bootstrap 3 styles along with a variety of powerful jQuery plugins to 
