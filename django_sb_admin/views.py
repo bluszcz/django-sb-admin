@@ -1,16 +1,28 @@
 from django.shortcuts import render
 
+
 def start(request):
     """Start page with a documentation.
     """
-    return render(request, "django_sb_admin/start.html",
-                  {"nav_active":"start"})
+    return render(
+        request,
+        "django_sb_admin/start.html",
+        {
+            "nav_active": "start"
+        }
+    )
+
 
 def dashboard(request):
     """Dashboard page.
     """
-    return render(request, "django_sb_admin/sb_admin_dashboard.html",
-                  {"nav_active":"dashboard"})
+    return render(
+        request,
+        "django_sb_admin/sb_admin_dashboard.html",
+        {
+            "nav_active": "dashboard"
+        }
+    )
 
 def charts(request):
     """Charts page.
