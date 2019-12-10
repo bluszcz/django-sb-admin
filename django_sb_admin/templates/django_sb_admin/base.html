@@ -122,53 +122,32 @@
         <span>Tables</span></a>
     </li>
   </ul>
-                
+<div id="content-wrapper">
+<div class="container-fluid">
 
-            {% block sb_admin_navbar_right %}
-           {% endblock sb_admin_navbar_right %}
-            {% block sb_admin_sidebar %}
-            {% endblock sb_admin_sidebar %}
 
-        {# <div id="page-wrapper"> #}
+  {% block sb_admin_navbar_right %}
+  {% endblock sb_admin_navbar_right %}
+  {% block sb_admin_sidebar %}
+  {% endblock sb_admin_sidebar %}
 
-            <div class="container-fluid">
+  {# <div id="page-wrapper"> #}
 
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">
-                            {% block sb_admin_title %}Start{% endblock sb_admin_title %}
-                            {% block sb_admin_subheading %}<small>Short introduction</small>{% endblock sb_admin_subheading %}
-                        </h1>
-<ol class="breadcrumb">
+  {# <div class="container-fluid"> #}
+
+  <!-- Page Heading -->
+          
+  <ol class="breadcrumb">
   <li class="breadcrumb-item">
   {% block sb_admin_breadcrumb %}<i class="fa fa-dashboard"></i>  <a href="{% url "sb_admin_start" %}">Django SB Admin</a>{% endblock sb_admin_breadcrumb %}
   </li>
-{% block sb_admin_breadcrumb_active %}
+  {% block sb_admin_breadcrumb_active %}
 
-{% endblock sb_admin_breadcrumb_active %}
-</ol>
-                    </div>
-                </div>
-                <!-- /.row -->
-{% if messages %}
-                <!-- Page Heading -->
-                <div class="row">
-                    <div class="col-lg-12">
-<ul class="messages">
-    {% for message in messages %}
-    <div class="alert alert-info alert-dismissable">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    <i class="fa fa-info-circle"></i>  {{ message }}
-    </div>
-    <!--<li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>-->
-    {% endfor %}
-</ul>
-                    </div>
-                </div>
-{% endif %}
+  {% endblock sb_admin_breadcrumb_active %}
+  </ol>
+          
 
-<div id="content-wrapper">
+
 
                 {% block sb_admin_content %}
                 <div class="row">
@@ -195,36 +174,31 @@
             </div>
             <!-- /.container-fluid -->
 
-         </div>
-        <!-- /#page-wrapper --> 
+      <!-- Sticky Footer -->
+      <footer class="sticky-footer">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright © Your Website 2019</span>
+          </div>
+        </div>
+      </footer>
 
     </div>
-    <!-- /#wrapper -->
+    <!-- /.content-wrapper -->
 
+  </div>
+  <!-- /#wrapper -->
 
   <!-- Scroll to Top Button-->
   <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-        </div>
-        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-        <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
-        </div>
-      </div>
     </div>
-  </div>
+    </div>
+    <!-- /#wrapper -->
+
+
 
 
     <!-- jQuery -->
