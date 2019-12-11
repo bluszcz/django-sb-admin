@@ -7,7 +7,7 @@ django-sb-admin
 Introduction
 ------------
 
-Django SB Admin is a resuable Django app which provides a Bootstrap 3 SB Admin dashboard theme:
+Django SB Admin is a resuable Django app which provides a Bootstrap 4 SB Admin dashboard theme:
 
 https://startbootstrap.com/templates/sb-admin/
 
@@ -31,7 +31,7 @@ Installation
 
 3. If you want to see an example app, add following to your urls file::
 
-    url(r'^django-sb-admin/', include('django_sb_admin.urls')),
+    path('django-sb-admin/', include('django_sb_admin.urls')),
 
 Usage
 -----
@@ -58,6 +58,7 @@ and then:
     {% block sb_admin_sidebar %}<!-- left sidebar -->{% endblock sb_admin_sidebar %}
     {% block sb_admin_navbar_right %}<!-- right top navbar -->{% endblock sb_admin_navbar_right %}
     {% block sb_admin_content %}<!-- content -->{% endblock sb_admin_content %}
+    {% block sb_admin_copyright %}<!-- copyright -->{% endblock sb_admin_copyright %}
 
 To use included login page put following in your **urls.py**::
 

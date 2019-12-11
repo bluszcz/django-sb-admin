@@ -33,7 +33,7 @@
   <a class="navbar-brand" href="{% block sb_admin_header_url %}{% url "sb_admin_start" %}{% endblock sb_admin_header_url %}">{% block sb_admin_header %}Django SB Admin{% endblock sb_admin_header %}</a>
 
   <button class="btn btn-link btn-sm text-white order-1 order-sm-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
-
+  {% block sb_admin_navbar_right %}
   <!-- Navbar Search -->
   <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
     <div class="input-group">
@@ -84,6 +84,7 @@
       </div>
     </li>
   </ul>
+  {% endblock sb_admin_navbar_right %}
 </nav>
 <div id="wrapper"><!-- wrapper -->
   <!-- Sidebar -->
