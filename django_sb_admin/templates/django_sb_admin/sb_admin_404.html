@@ -1,0 +1,27 @@
+{% extends "django_sb_admin/base.html" %}{% load static %}{% block sb_admin_title %}404{% endblock sb_admin_title %}
+{% block sb_admin_custom_css %}{% endblock sb_admin_custom_css %}
+{% block sb_admin_subheading %}{% endblock sb_admin_subheading %}
+{% block sb_admin_breadcrumb_active %}
+ <li class="breadcrumb-item active">
+      <i class="fa fa-bar-chart-o""></i>404
+ </li>
+{% endblock sb_admin_breadcrumb_active %}
+ {% block sb_admin_content %}
+
+       <!-- Page Content -->
+        <h1 class="display-1">404</h1>
+        <p class="lead">Page not found. You can
+          <a href="javascript:history.back()">go back</a>
+          to the previous page, or
+          <a href="{% url "sb_admin_start" %}">return home</a>.</p>
+                
+{% endblock sb_admin_content %}
+{% block sb_admin_custom_js %}
+
+
+  <script src="{% static "vendor/chart.js/Chart.min.js" %}"></script>
+  <script src="{% static "js/demo/chart-area-demo.js" %}"></script>
+  <script src="{% static "js/demo/chart-bar-demo.js" %}"></script>
+  <script src="{% static "js/demo/chart-pie-demo.js" %}"></script>
+
+{% endblock sb_admin_custom_js %}
