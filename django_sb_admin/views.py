@@ -12,6 +12,13 @@ def start(request):
         }
     )
 
+def login(request):
+    """Start page with a documentation.
+    """
+    return render(
+        request,
+        "django_sb_admin/login.html"
+    )
 
 def dashboard(request):
     """Dashboard page.
