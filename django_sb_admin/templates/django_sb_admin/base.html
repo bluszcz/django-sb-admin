@@ -1,31 +1,31 @@
 {% load static %}<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{% block sb_admin_description %}{% endblock sb_admin_description %}">
-    <meta name="author" content="{% block sb_admin_author %}{% endblock %}">
-    <title>{% block title %}Django SB Admin -Bootstrap Admin Template{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="{% block sb_admin_description %}{% endblock sb_admin_description %}">
+  <meta name="author" content="{% block sb_admin_author %}{% endblock %}">
+  <title>{% block title %}Django SB Admin -Bootstrap Admin Template{% endblock %}</title>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <!-- Custom fonts for this template-->
-    <link href="{% static "vendor/fontawesome-free/css/all.min.css"  %}" rel="stylesheet" type="text/css">
+  <!-- Custom fonts for this template-->
+  <link href="{% static "vendor/fontawesome-free/css/all.min.css"  %}" rel="stylesheet" type="text/css">
 
-    <!-- Page level plugin CSS-->
-    <link href="{% static "vendor/datatables/dataTables.bootstrap4.css" %}" rel="stylesheet">
+  <!-- Page level plugin CSS-->
+  <link href="{% static "vendor/datatables/dataTables.bootstrap4.css" %}" rel="stylesheet">
 
-    <!-- Custom styles for this template-->
-    <link href="{% static "css/sb-admin.css" %}" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="{% static "css/sb-admin.css" %}" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    {% block sb_admin_custom_css %}{% endblock sb_admin_custom_css %}
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  {% block sb_admin_custom_css %}{% endblock sb_admin_custom_css %}
 </head>
 
 <body id="page-top">
@@ -84,11 +84,11 @@
       </div>
     </li>
   </ul>
-
 </nav>
-<div id="wrapper">
+<div id="wrapper"><!-- wrapper -->
   <!-- Sidebar -->
   <ul class="sidebar navbar-nav">
+    {% block sb_admin_sidebar %}
     <li class="nav-item active">
       <a class="nav-link" href="{% url "sb_admin_dashboard" %}">
         <i class="fas fa-fw fa-tachometer-alt"></i>
@@ -121,114 +121,76 @@
         <i class="fas fa-fw fa-table"></i>
         <span>Tables</span></a>
     </li>
+    {% endblock sb_admin_sidebar %}
   </ul>
-<div id="content-wrapper">
-<div class="container-fluid">
-
-
-  {% block sb_admin_navbar_right %}
-  {% endblock sb_admin_navbar_right %}
-  {% block sb_admin_sidebar %}
-  {% endblock sb_admin_sidebar %}
-
+  <div id="content-wrapper"><!-- content wrapper -->
+    <div class="container-fluid"><!-- cfluid -->
   {# <div id="page-wrapper"> #}
-
   {# <div class="container-fluid"> #}
+      <!-- Page Heading -->
 
-  <!-- Page Heading -->
-          
-  <ol class="breadcrumb">
-  <li class="breadcrumb-item">
-  {% block sb_admin_breadcrumb %}<i class="fa fa-dashboard"></i>  <a href="{% url "sb_admin_start" %}">Django SB Admin</a>{% endblock sb_admin_breadcrumb %}
-  </li>
-  {% block sb_admin_breadcrumb_active %}
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          {% block sb_admin_breadcrumb %}<i class="fa fa-dashboard"></i>  <a href="{% url "sb_admin_start" %}">Django SB Admin</a>{% endblock sb_admin_breadcrumb %}
+        </li>
+        {% block sb_admin_breadcrumb_active %}
+        {% endblock sb_admin_breadcrumb_active %}
+      </ol>
+      {% block sb_admin_content %}
+      <div class="alert alert-secondary alert-dismissable show">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <i class="fa fa-info-circle"></i>  <strong>Django SB Admin</strong> This and everything below is inside <code>sb_admin_content</code> block.
+      </div>
+      <h2 class="page-header">Django SB Admin</h2>
+      <p class="lead">Reusable Django application providing SB Admin dashboard theme.</p>
+      <h3>Links</h3>
+      <ul>
+        <li><a href="https://github.com/bluszcz/django-sb-admin">django-sb-admin</a> project page on github</li>
+        <li><a href="https://startbootstrap.com/templates/sb-admin/">sb-admin</a> original project page</li>
+      </ul>
 
-  {% endblock sb_admin_breadcrumb_active %}
-  </ol>
-          
-
-
-
-                {% block sb_admin_content %}
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="alert alert-info alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-                            <i class="fa fa-info-circle"></i>  <strong>Django SB Admin</strong> This and everything below is inside <code>sb_admin_content</code> block.
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2 class="page-header">Django SB Admin</h2>
-                        <p class="lead">Reusable Django application providing SB Admin dashboard theme, but also some other bootstrap related extras (for now it is only a login snippet).</p>
-                        <h5>List of resources</h5>
-                        <h6>Font Awesome</h6>
-                        <p class="">You can find list of all awesome icons <a href="https://fortawesome.github.io/Font-Awesome/icons/">here</a>.
-                    </div>
-                </div>
-                {% include "django_sb_admin/login.html" %}               
-                {% endblock sb_admin_content %}
-            </div>
-
-            </div>
-            <!-- /.container-fluid -->
-
-      <!-- Sticky Footer -->
-      <footer class="sticky-footer">
-        <div class="container my-auto">
-          <div class="copyright text-center my-auto">
-            <span>Copyright © Your Website 2019</span>
-          </div>
-        </div>
-      </footer>
-
+  {# {% include "django_sb_admin/login.html" %}                #}
+  {% endblock sb_admin_content %}
+    </div><!-- cfluid -->
+  </div><!-- content wrapper -->
+  <!-- Sticky Footer -->
+  <footer class="sticky-footer">
+    <div class="container my-auto">
+      <div class="copyright text-center my-auto">
+        <span>{% block sb_admin_copyright %}Copyright © Your Website 2019{% endblock sb_admin_copyright %}</span>
+      </div>
     </div>
-    <!-- /.content-wrapper -->
+  </footer>
 
-  </div>
-  <!-- /#wrapper -->
+</div><!-- wrapper end -->
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+  <i class="fas fa-angle-up"></i>
+</a>
 
-  <!-- Scroll to Top Button-->
-  <a class="scroll-to-top rounded" href="#page-top">
-    <i class="fas fa-angle-up"></i>
-  </a>
+<!-- jQuery -->
+<script src="{% static "js/jquery.js"%}"></script>
+<!-- Bootstrap Core JavaScript -->
+<script src="{% static "js/bootstrap.min.js"%}"></script>
+{% block sb_admin_custom_js %}{% endblock sb_admin_custom_js %}
+<!-- Bootstrap core JavaScript-->
+<script src="{% static "vendor/jquery/jquery.min.js"%}"></script>
+<script src="{% static "vendor/bootstrap/js/bootstrap.bundle.min.js"%}"></script>
 
-    </div>
-    </div>
-    <!-- /#wrapper -->
+<!-- Core plugin JavaScript-->
+<script src="{% static "vendor/jquery-easing/jquery.easing.min.js"%}"></script>
 
+<!-- Page level plugin JavaScript-->
+<script src="{% static "vendor/chart.js/Chart.min.js"%}"></script>
+<script src="{% static "vendor/datatables/jquery.dataTables.js"%}"></script>
+<script src="{% static "vendor/datatables/dataTables.bootstrap4.js"%}"></script>
 
+<!-- Custom scripts for all pages-->
+<script src="{% static "js/sb-admin.min.js"%}"></script>
 
-
-    <!-- jQuery -->
-    <script src="{% static "js/jquery.js"%}"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{% static "js/bootstrap.min.js"%}"></script>
-
-
-    {% block sb_admin_custom_js %}{% endblock sb_admin_custom_js %}
-
-
-  <!-- Bootstrap core JavaScript-->
-  <script src="{% static "vendor/jquery/jquery.min.js"%}"></script>
-  <script src="{% static "vendor/bootstrap/js/bootstrap.bundle.min.js"%}"></script>
-
-  <!-- Core plugin JavaScript-->
-  <script src="{% static "vendor/jquery-easing/jquery.easing.min.js"%}"></script>
-
-  <!-- Page level plugin JavaScript-->
-  <script src="{% static "vendor/chart.js/Chart.min.js"%}"></script>
-  <script src="{% static "vendor/datatables/jquery.dataTables.js"%}"></script>
-  <script src="{% static "vendor/datatables/dataTables.bootstrap4.js"%}"></script>
-
-  <!-- Custom scripts for all pages-->
-  <script src="{% static "js/sb-admin.min.js"%}"></script>
-
-  <!-- Demo scripts for this page-->
-  <script src="{% static "js/demo/datatables-demo.js"%}"></script>
-  <script src="{% static "js/demo/chart-area-demo.js"%}"></script>
+<!-- Demo scripts for this page-->
+<script src="{% static "js/demo/datatables-demo.js"%}"></script>
+<script src="{% static "js/demo/chart-area-demo.js"%}"></script>
 
 
 </body>
