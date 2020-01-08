@@ -7,7 +7,7 @@
 {% block sb_admin_breadcrumb %}{% endblock sb_admin_breadcrumb %}
 {% block sb_admin_breadcrumb_active %}{% endblock sb_admin_breadcrumb_active %}
 {% block sb_admin_content %}
-{% load i18n admin_static %}
+{% load i18n static %}
 {% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/login.css" %}" />{% endblock %}
 {% block content %}
 {% include "django_sb_admin/login.html" %}
