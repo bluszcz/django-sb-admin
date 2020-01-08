@@ -173,7 +173,7 @@
 <script src="{% static "js/jquery.js"%}"></script>
 <!-- Bootstrap Core JavaScript -->
 <script src="{% static "js/bootstrap.min.js"%}"></script>
-{% block sb_admin_custom_js %}{% endblock sb_admin_custom_js %}
+
 <!-- Bootstrap core JavaScript-->
 <script src="{% static "vendor/jquery/jquery.min.js"%}"></script>
 <script src="{% static "vendor/bootstrap/js/bootstrap.bundle.min.js"%}"></script>
@@ -189,10 +189,7 @@
 <!-- Custom scripts for all pages-->
 <script src="{% static "js/sb-admin.min.js"%}"></script>
 
-<!-- Demo scripts for this page-->
-<script src="{% static "js/demo/datatables-demo.js"%}"></script>
-<script src="{% static "js/demo/chart-area-demo.js"%}"></script>
-
+{% block sb_admin_custom_js %}{% endblock sb_admin_custom_js %}
 
 </body>
 
